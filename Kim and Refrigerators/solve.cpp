@@ -24,7 +24,7 @@ public:
     }
 };
 
-void solve(Point *customers, bool *visited, Point current, Point home, int n, int total, int dist)
+void solve(Point *customers, vector<bool> &visited, Point current, Point home, int n, int total, int dist)
 {
     if (n == 0)
     {
@@ -56,14 +56,16 @@ int main()
     {
         cin >> n;
         customers = new Point[n];
-        bool visited[n];
+        vector<bool> visited;
         cin >> office.x >> office.y >> home.x >> home.y;
         for (int j = 0; j < n; j++)
         {
             cin >> customers[j].x >> customers[j].y;
+            visited.push_back(false);
         }
         solve(customers, visited, office, home, n, n, 0);
         cout << "# " << i + 1 << " " << ans << endl;
         ans = 1000000;
+        free(customers);
     }
 }
