@@ -14,7 +14,7 @@ int main()
     {
         if (s[i] == '(')
         {
-            if (level == 2)
+            if (level == n)
             {
                 sum += num;
             }
@@ -23,7 +23,7 @@ int main()
         }
         else if (s[i] == ')')
         {
-            if (level == 2)
+            if (level == n)
             {
                 sum += num;
             }
